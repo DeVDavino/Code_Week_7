@@ -1,0 +1,139 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+:root{
+    /* General vars */
+    --body-bg: #1a1a2e;
+
+    /* Red button vars */
+    --button-red-bg: #d11937;
+    --button-red-after-bg: #e94560;
+
+    /* Green button vars */
+    --button-green-bg: #02705c;
+    --button-green-after-bg: #03c4a1;
+
+    /* Yellow button vars */
+    --button-yellow-bg: #9b6b00;
+    --button-yellow-after-bg: #ffbb24;
+
+    /* Blue buttonv vars */
+    --button-blue-bg: #0f3460;
+    --button-blue-after-bg: #1a5ca9;
+}
+
+body{
+    background-color: var(--body-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 2rem;
+}
+
+button{
+    height: 35rem;
+    width: 35rem;
+    border: none;
+    border-radius: 50%; 
+    position: relative;                                                        
+}
+
+.button--red{
+    background-color: var(--button-red-bg);
+}
+
+.button--green{
+    background-color: var(--button-green-bg);
+}
+
+.button--yellow{
+    background-color: var(--button-yellow-bg);
+}
+
+.button--blue{
+    background-color: var(--button-blue-bg);
+}
+
+.button--red::after{
+    content: "";
+    height: 95%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--button-red-after-bg);
+    top:0;
+    left:0;
+    border-radius: 50%;
+}
+
+.button--red-glow::after{
+    box-shadow: 0 0 2rem red;
+}
+
+.button--green::after{
+    content: "";
+    height: 95%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--button-green-after-bg);
+    top:0;
+    left:0;
+    border-radius: 50%;
+}
+
+.button--yellow::after{
+    content: "";
+    height: 95%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--button-yellow-after-bg);
+    top:0;
+    left:0;
+    border-radius: 50%;
+}
+
+.button--blue::after{
+    content: "";
+    height: 95%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--button-blue-after-bg);
+    top:0;
+    left:0;
+    border-radius: 50%;
+}
+
+.button--small{
+    width: 15rem;
+    height: 15rem;
+}
+
+.button--medium{
+    width: 25rem;
+    height: 25rem;
+}
+
+.button:active::after{
+    transform: translateY(5%);
+}
+
+.button:active{
+    background-color: transparent;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 70rem){
+    body{
+        flex-wrap: wrap;
+    }
+}
